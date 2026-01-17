@@ -12,4 +12,16 @@ class AutoMobile:
         self.Km = km_iniziali
         self.accesa = False
 
-    pass
+    def accendi(self):
+        self.accesa = True
+        print(f"la {self.modello} è accesa")
+         
+    def viaggia(self, km_percorsi):
+        if self.accesa:
+            self.Km += km_percorsi
+            print(f"La {self.modello} ha percorso {self.Km} KM ")
+        else:
+            print(f"La {self.modello} è spenta. ")
+
+
+      
