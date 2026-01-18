@@ -40,7 +40,15 @@ if __name__ == "__main__":
     modello = input("inserisci il modello dell'auto: ")
     km  = int(input("inserisci quanti km ha la tua macchina: "))
     # importante fare cast ad int per i numeri per evitare problemi
+
+    marca2 = input("inserisci marca dell'auto: ")
+    modello2 = input("inserisci il modello dell'auto: ")
+    km2  = int(input("inserisci quanti km ha la tua macchina: "))
     c1 = AutoMobile(marca, modello, km)
+    c2 = AutoMobile(marca2, modello2, km2)
     print(c1)
+    print(c2)
     c1.accendi()
     c1.viaggia(30)
+    c2.viaggia(20)
+    print(f"la somma dei km delle tue auto è {c1.__add__(c2.Km)}")
