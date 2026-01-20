@@ -20,6 +20,9 @@ class calculatorThread(threading.Thread):
 
 
 if __name__ == "__main__":
+   # creao i thread come oggetto della classe
+   # avvio i thread con start()
+   # raccolgo con join() 
    t1 = calculatorThread(id_operazione=1, valore=10)
    t2 = calculatorThread(id_operazione=2, valore=20)
 
