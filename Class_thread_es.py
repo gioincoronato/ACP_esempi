@@ -3,6 +3,9 @@ from time import sleep
 
 
 
+# in questo caso creo una classe che:
+# eredita dalla classe thread e ne chima il costruittore
+# esegue le operazioni che voglio facendo l'overiride del metodo run
 
 class calculatorThread(threading.Thread):
     def __init__(self, id_operazione, valore):
@@ -20,7 +23,7 @@ class calculatorThread(threading.Thread):
 
 
 if __name__ == "__main__":
-   # creao i thread come oggetto della classe
+   # creo i thread come oggetto della classe
    # avvio i thread con start()
    # raccolgo con join() 
    t1 = calculatorThread(id_operazione=1, valore=10)
