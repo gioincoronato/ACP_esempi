@@ -5,9 +5,14 @@ from time import sleep
 
 contatore_globale = 0 #risorsa condivisa
 lucchetto = threading.Lock()
+# il lock semplice ha un problema:
+# se fatta acquire() più volte sullo stesso lock dal thread che lo possiede causa deadlock
+# è opportuno usare la classe Rlock che ha un contatore che conta le acquire e le relase
+# e sblocca il lock quando il counter torna a 0
 
 def safe_increment(nome_thread):
-    global contatore_globale
+
+    global contatore_globale # usaimo global in modo da riferirci alla var globale creata
 
     print(f"{nome_thread} tentativo di acquisizione... ")
 
