@@ -18,6 +18,7 @@ s.bind(server_address_port)
 print("Server in ascolto per pacchetti UDP ")
 
 # otteniamo dati e indirizzo del client
+# utilizzo utf-8 per l'encode e decode
 msg_client, addr = s.recvfrom(BUFF_SIZE)
 print("SERVER| messaggio ricevuto: " + msg_client.decode("utf-8"))
 print(f"SERVER| indirizzo client: {addr} ")
