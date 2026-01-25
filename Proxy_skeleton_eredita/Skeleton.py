@@ -20,7 +20,9 @@ class Skeleton(subject):
 
     def run_skeleton(self):
         # def, bind e listen della socket
+        # in questo caso la socket rappresenta lo strumento di comunicazione
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+        # bind sull'indirizzo scelto e attesa di connessione
         s.bind(('localhost', self.port))  
         s.listen(5)
         print(f"Skeleton in ascolto sulla porta {self.port}") 
