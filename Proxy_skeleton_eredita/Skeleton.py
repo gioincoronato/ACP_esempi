@@ -51,6 +51,7 @@ class Skeleton(subject):
 class real_subject(Skeleton):
     # qui implementiamo la vera logica richiesta dall'interfaccia
     # request nello skeleton fa il vero lavoro
+    # in questo approccio real subject è figlia di skeleton
     def request(self, data):
         return data[::-1] # ritorna i dati in ingresso imvertiti
 
