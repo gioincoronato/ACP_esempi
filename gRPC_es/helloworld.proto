@@ -1,0 +1,37 @@
+// qui viene definito il contratto:
+
+// specifichiamo la versione e definiamo il namespace
+syntax = "proto3";
+package helloworld;
+
+// definisco il servizio, ovvero quali metodi si possono chiamare
+service Greeter{
+    // metodo RPC: invia HelloRequest e riceve HelloReply
+    rpc SayHello(HelloRequest) returns (HelloReply){}
+}
+
+// definisco la struttura dei dati di input e output
+message HelloRequest{
+    string name = 1; // il campo name ha il tag "1"
+}
+
+message HelloReply{
+    string message = 1; // il campo name ha il tag "1"
+}
+
+/*
+prima di tutto bisogna compilare il codice proto, per farlo
+python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. helloworld.proto
+
+verranno generati:
+1- hellowolrd_pb2.py
+contiene il codice (classi dei messaggi Hellorequest ed HelloReply) 
+per popolare, serializzare e recuparare tipi di messaggio richiesta e risposta
+
+2- hellowolrd_pb2_grpc.py
+contiene:
+- interfaccia proxy usata dal client per chiamare i metodi definiti nel servizio
+  HelllWorld
+- interfaccia skeleton usata dal server per implentare i metodi definiti nel
+  servizio HelloWorld
+*/
